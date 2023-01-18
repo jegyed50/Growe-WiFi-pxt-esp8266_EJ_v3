@@ -42,7 +42,29 @@ namespace APEX_esp8266 {
         return APEX_LOCAL_Uploaded
     }
 
+  /** connection to APEX_LOCAL server
+  
+     */
+    //% subcategory="APEX local"
+    //% weight=29
+    //% blockGap=8
+    //% blockId=esp8266_connect_APEX_LOCAL
+    //% block="Connect  to APEX_LOCAL_API_SERVER
+    export function connectAPEXLocal(   APEX_SERVER_NAME_IP: string = APEX_LOCAL_API_SERVER_NAME_IP,
+				APEX_SERVER_PORT : string = APEX_LOCAL_API_SERVER_PORT ) {
 
+        // Reset the upload successful flag.
+        APEX_LOCAL_Connected = false
+
+        // Make sure the WiFi is connected.
+        if (isWifiConnected() == false) return
+
+        // Connect to APEX_LOCAL. Return if failed.
+		//
+       // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_NAME_IP + "\",8080", null, 10000) == false) return // 8080-at cserélni APEX_SERVER_PORT-ra !!!
+        APEX_LOCAL_Connected =  sendCommand("AT+CIPSTART=\"TCP\",\"192.168.0.2\",8080", "OK", 10000)
+  
+    }
 
     /**
      * Upload data to APEX (Data can only be updated to APEX every 15 seconds ? Kiszámolni, hogy a havi net forgalmi korlátba mi fée bele az APEX AlleaysFree szolgáltatásba.) !!!
