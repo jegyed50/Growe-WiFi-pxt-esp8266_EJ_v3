@@ -117,7 +117,7 @@ namespace APEX_esp8266 {
                                                                    // 8080-at cserélni APEX_SERVER_PORT-ra !!!
         // Construct the data to send.
 	    // http://192.168.0.2:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-99.9
-        let data = "GET /ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-88.8" 
+        let data = "GET /ords/f?p=100\:6\:\:APPLICATION_PROCESS=LOG_DATA_01\:\:\:P6_FIELD1\:-88.8" 
         /*
 		if (field2 != null) data += "&field2=" + field2
         if (field2 != null) data += "&field3=" + field3
