@@ -99,6 +99,7 @@ namespace APEX_esp8266 {
                 if (rxData.includes(response)) {
                     responseLine = rxData
                     OLED.writeStringNewLine(responseLine)
+                    radio.sendString(responseLine)
                 }
                 break
             }
@@ -110,6 +111,7 @@ namespace APEX_esp8266 {
                 if (rxData.slice(0, rxData.indexOf("\r\n")).includes(response)) {
                     responseLine = rxData.slice(0, rxData.indexOf("\r\n"))
                     OLED.writeStringNewLine(responseLine)
+                    radio.sendString(responseLine)
 
                     // Trim the Rx data for next call.
                     rxData = rxData.slice(rxData.indexOf("\r\n") + 2)
@@ -121,6 +123,7 @@ namespace APEX_esp8266 {
             }
         }
         OLED.writeStringNewLine(responseLine)
+        radio.sendString(responseLine)
         return responseLine
     }
 
