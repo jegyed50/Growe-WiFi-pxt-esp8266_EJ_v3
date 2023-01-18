@@ -11,10 +11,6 @@
     "files": [
         "README.md",
         "main.ts",
-        "blynk.ts",
-        "sntp.ts",
-        "telegram.ts",
-        "thingspeak.ts",
         "APEX.ts"
     ],
     "testFiles": [
