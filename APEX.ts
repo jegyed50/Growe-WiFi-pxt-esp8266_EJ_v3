@@ -23,8 +23,8 @@ namespace APEX_esp8266 {
     //% subcategory="APEX local"
     //% weight=30
     //% blockGap=8
-    //% blockId=esp8266_is_APEX_data_uploaded
-    //% block="APEX_LOCAL data uploaded"
+    //% blockId=esp8266_is_APEX_local_server_connected
+    //% block="APEX_LOCAL server connected"
     export function isAPEX_LOCAL_Connected(): boolean {
         return APEX_LOCAL_Connected
     }
