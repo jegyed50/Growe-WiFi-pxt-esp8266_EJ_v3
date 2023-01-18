@@ -60,7 +60,7 @@ namespace APEX_esp8266 {
                 // Check if expected response received.
                 if (rxData.slice(0, rxData.indexOf("\r\n")).includes(expected_response)) {
                     result = true
-                    OLED.writeStringNewLine(rxData)
+
                     radio.sendString(rxData)
                     break
                 }
@@ -69,7 +69,7 @@ namespace APEX_esp8266 {
                 if (expected_response == "OK") {
                     if (rxData.slice(0, rxData.indexOf("\r\n")).includes("ERROR")) {
                         result = false
-                        OLED.writeStringNewLine(rxData)
+                      
                         radio.sendString(rxData)
                         break
                     }
@@ -77,7 +77,7 @@ namespace APEX_esp8266 {
 
                 // Trim the Rx data before loop again.
                 rxData = rxData.slice(rxData.indexOf("\r\n") + 2)
-                OLED.writeStringNewLine(rxData)
+              
                 radio.sendString(rxData)
             }
         }
