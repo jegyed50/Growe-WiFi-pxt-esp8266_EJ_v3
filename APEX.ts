@@ -15,7 +15,19 @@ const APEX_LOCAL_API_PARAMETER_PREFIX="P6_FIELD"
 namespace APEX_esp8266 {
     // Flag to indicate whether the data was uploaded to APEX successfully.
     let APEX_LOCAL_Uploaded = false
+    let APEX_LOCAL_Connected = false
 
+/**
+     * Return true if connection to APEX_LOCAL server successfully.
+     */
+    //% subcategory="APEX local"
+    //% weight=30
+    //% blockGap=8
+    //% blockId=esp8266_is_APEX_data_uploaded
+    //% block="APEX_LOCAL data uploaded"
+    export function isAPEX_LOCAL_Connected(): boolean {
+        return APEX_LOCAL_Connected
+    }
 
 
     /**
@@ -74,7 +86,8 @@ namespace APEX_esp8266 {
         // Connect to APEX_LOCAL. Return if failed.
 		//
        // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_NAME_IP + "\",8080", null, 10000) == false) return // 8080-at cserélni APEX_SERVER_PORT-ra !!!
-        sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_NAME_IP + "\",8080", null, 10000)// 8080-at cserélni APEX_SERVER_PORT-ra !!!
+        APEX_LOCAL_Connected =  sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_NAME_IP + "\",8080", "OK", 10000)
+                                                                   // 8080-at cserélni APEX_SERVER_PORT-ra !!!
         // Construct the data to send.
 	    // http://192.168.0.2:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-99.9
         let data = "GET /ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-99.9" 
