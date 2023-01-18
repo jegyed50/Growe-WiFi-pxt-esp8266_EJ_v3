@@ -51,7 +51,7 @@ namespace APEX_esp8266 {
     //% weight=30
     //% blockGap=8
     //% blockId=esp8266_connect_APEX_LOCAL
-    //% block="Connect to APEX_LOCAL_API_SERVER"
+    //% block="Connect to APEX_LOCAL_API_SERVER2 |SERVER_NAME_IP %APEX_SERVER_NAME_IP |APEX_SERVER_PORT %APEX_SERVER_PORT"
     export function connectAPEXLocal(APEX_SERVER_NAME_IP: string = APEX_LOCAL_API_SERVER_NAME_IP,
 				APEX_SERVER_PORT : string = APEX_LOCAL_API_SERVER_PORT ) {
 
