@@ -21,7 +21,7 @@ namespace APEX_esp8266 {
      * Return true if connection to APEX_LOCAL server successfully.
      */
     //% subcategory="APEX local"
-    //% weight=30
+    //% weight=33
     //% blockGap=8
     //% blockId=esp8266_is_APEX_local_server_connected
     //% block="APEX_LOCAL server connected"
@@ -34,7 +34,7 @@ namespace APEX_esp8266 {
      * Return true if data is uploaded to APEX_LOCAL successfully.
      */
     //% subcategory="APEX local"
-    //% weight=30
+    //% weight=32
     //% blockGap=8
     //% blockId=esp8266_is_APEX_data_uploaded
     //% block="APEX_LOCAL data uploaded"
@@ -46,11 +46,11 @@ namespace APEX_esp8266 {
   
      */
     //% subcategory="APEX local"
-    //% weight=29
+    //% weight=30
     //% blockGap=8
     //% blockId=esp8266_connect_APEX_LOCAL
     //% block="Connect to APEX_LOCAL_API_SERVER
-    export function connectAPEXLocal(   APEX_SERVER_NAME_IP: string = APEX_LOCAL_API_SERVER_NAME_IP,
+    export function connectAPEXLocal(APEX_SERVER_NAME_IP: string = APEX_LOCAL_API_SERVER_NAME_IP,
 				APEX_SERVER_PORT : string = APEX_LOCAL_API_SERVER_PORT ) {
 
         // Reset the upload successful flag.
