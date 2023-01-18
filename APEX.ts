@@ -64,9 +64,9 @@ namespace APEX_esp8266 {
         // Connect to APEX_LOCAL. Return if failed.
 		//
        // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_NAME_IP + "\",8080", null, 10000) == false) return // 8080-at cserélni APEX_SERVER_PORT-ra !!!
-        APEX_LOCAL_Connected =  sendCommand("AT+CIPSTART=\"TCP\",\"192.168.0.2\",8080", "OK", 10000)
+       // APEX_LOCAL_Connected =  sendCommand("AT+CIPSTART=\"TCP\",\"192.168.0.2\",8080", "OK", 10000)
 	 
-	// APEX_LOCAL_Connected =  sendCommand("AT+CIPSTART=\"TCP\",\"thingspeak.com\",80", "OK", 10000)
+	 APEX_LOCAL_Connected =  sendCommand("AT+CIPSTART=\"TCP\",\"thingspeak.com\",80", "OK", 10000)
   
     }
 
