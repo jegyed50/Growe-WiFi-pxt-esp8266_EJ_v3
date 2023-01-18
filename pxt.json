@@ -1,7 +1,7 @@
 {
-    "name": "pxt-esp8266",
+    "name": "pxt-esp8266 APEX",
     "version": "2.0.0",
-    "description": "MakeCode Package for ESP8266 WiFi Module",
+    "description": "APEX MakeCode Package for ESP8266 WiFi Module",
     "license": "MIT",
     "dependencies": {
         "core": "*",
@@ -14,7 +14,8 @@
         "blynk.ts",
         "sntp.ts",
         "telegram.ts",
-        "thingspeak.ts"
+        "thingspeak.ts",
+        "APEX.ts"
     ],
     "testFiles": [
         "test.ts"
