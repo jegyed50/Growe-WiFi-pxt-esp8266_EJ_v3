@@ -98,6 +98,7 @@ namespace APEX_esp8266 {
                 // Check if expected response received in case no CRLF received.
                 if (rxData.includes(response)) {
                     responseLine = rxData
+                    OLED.writeStringNewLine(responseLine)
                 }
                 break
             }
@@ -108,6 +109,7 @@ namespace APEX_esp8266 {
                 // Check if expected response received.
                 if (rxData.slice(0, rxData.indexOf("\r\n")).includes(response)) {
                     responseLine = rxData.slice(0, rxData.indexOf("\r\n"))
+                    OLED.writeStringNewLine(responseLine)
 
                     // Trim the Rx data for next call.
                     rxData = rxData.slice(rxData.indexOf("\r\n") + 2)
@@ -118,7 +120,7 @@ namespace APEX_esp8266 {
                 rxData = rxData.slice(rxData.indexOf("\r\n") + 2)
             }
         }
-
+        OLED.writeStringNewLine(responseLine)
         return responseLine
     }
 
