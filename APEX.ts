@@ -26,7 +26,7 @@ namespace APEX_esp8266 {
     //% blockGap=8
     //% blockId=esp8266_is_APEX_data_uploaded
     //% block="APEX_LOCAL data uploaded"
-    export function isAPEX_LOCALU_ploaded(): boolean {
+    export function isAPEX_LOCAL_Uploaded(): boolean {
         return APEX_LOCAL_Uploaded
     }
 
@@ -52,7 +52,7 @@ namespace APEX_esp8266 {
     //% blockGap=8
     //% blockId=esp8266_upload_APEX_LOCAL
     //% block="Upload data to APEX_LOCAL_API_SERVER_NAME_IP |SERVER_NAME_IP %APEX_SERVER_NAME_IP |APEX_SERVER_PORT %APEX_SERVER_PORT |WITHOUT_PARAMETERS %WITHOUT_PARAMETERS |PARAMETER_PREFIX %PARAMETER_PREFIX|Field 1 %field1||Field 2 %field2|Field 3 %field3|Field 4 %field4|Field 5 %field5|Field 6 %field6|Field 7 %field7|Field 8 %field8"
-    export function uploadThingspeak(   APEX_SERVER_NAME_IP: string = APEX_LOCAL_API_SERVER_NAME_IP,
+    export function uploadAPEXLocal(   APEX_SERVER_NAME_IP: string = APEX_LOCAL_API_SERVER_NAME_IP,
 										APEX_SERVER_PORT : string = APEX_LOCAL_API_SERVER_PORT,
 										WITHOUT_PARAMETERS : string = APEX_LOCAL_API_TEST_PATH,
 										PARAMETER_PREFIX : string = APEX_LOCAL_API_PATH_WITHOUT_PARAMETERS,
@@ -74,7 +74,7 @@ namespace APEX_esp8266 {
         // Connect to APEX_LOCAL. Return if failed.
 		//
        // if (sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_NAME_IP + "\",8080", null, 10000) == false) return // 8080-at cserélni APEX_SERVER_PORT-ra !!!
-        isendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_NAME_IP + "\",8080", null, 10000)// 8080-at cserélni APEX_SERVER_PORT-ra !!!
+        sendCommand("AT+CIPSTART=\"TCP\",\"" + APEX_SERVER_NAME_IP + "\",8080", null, 10000)// 8080-at cserélni APEX_SERVER_PORT-ra !!!
         // Construct the data to send.
 	    // http://192.168.0.2:8080/ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-99.9
         let data = "GET /ords/f?p=100:6::APPLICATION_PROCESS=LOG_DATA_01:::P6_FIELD1:-99.9" 
@@ -107,7 +107,7 @@ namespace APEX_esp8266 {
         //if (uploadCount == 0) return
 
         // Set the upload successful flag and return.
-        thingspeakUploaded = true
+        APEX_LOCAL_Uploaded = true
         return
     }
 }
