@@ -42,9 +42,10 @@ namespace APEX_esp8266 {
         return APEX_LOCAL_Uploaded
     }
 
-  /** connection to APEX_LOCAL server
-       * @param APEX_SERVER_NAME_IP.
-	 * @param APEX_SERVER_PORT.
+  /** 
+     *connection to APEX_LOCAL server
+     * @param APEX_SERVER_NAME_IP.
+     * @param APEX_SERVER_PORT.
      */
     //% subcategory="APEX local"
     //% weight=30
@@ -68,7 +69,8 @@ namespace APEX_esp8266 {
     }
 
     /**
-     * Upload data to APEX (Data can only be updated to APEX every 15 seconds ? Kiszámolni, hogy a havi net forgalmi korlátba mi fée bele az APEX AlleaysFree szolgáltatásba.) !!!
+     * Upload data to APEX (Data can only be updated to APEX every 15 seconds ? 
+     Kiszámolni, hogy a havi net forgalmi korlátba mi fée bele az APEX AlleaysFree szolgáltatásba.) !!!
      * @param APEX_SERVER_NAME_IP.
 	 * @param APEX_SERVER_PORT.
      * @param WITHOUT_PARAMETERS.
