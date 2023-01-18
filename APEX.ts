@@ -43,7 +43,8 @@ namespace APEX_esp8266 {
     }
 
   /** connection to APEX_LOCAL server
-  
+       * @param APEX_SERVER_NAME_IP.
+	 * @param APEX_SERVER_PORT.
      */
     //% subcategory="APEX local"
     //% weight=30
