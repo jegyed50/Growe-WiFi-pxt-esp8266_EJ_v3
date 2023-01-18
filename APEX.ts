@@ -44,8 +44,8 @@ namespace APEX_esp8266 {
 
   /** 
      *connection to APEX_LOCAL server
-     * @param APEX_SERVER_NAME_IP.
-     * @param APEX_SERVER_PORT.
+     * @param APEX_SERVER_NAME_IP APEX szerver name or IP address.
+     * @param APEX_SERVER_PORT APEX szerver port.
      */
     //% subcategory="APEX local"
     //% weight=30
@@ -73,10 +73,10 @@ namespace APEX_esp8266 {
     /**
      * Upload data to APEX (Data can only be updated to APEX every 15 seconds ? 
      Kiszámolni, hogy a havi net forgalmi korlátba mi fée bele az APEX AlleaysFree szolgáltatásba.) !!!
-     * @param APEX_SERVER_NAME_IP.
-	 * @param APEX_SERVER_PORT.
-     * @param WITHOUT_PARAMETERS.
-     * @param PARAMETER_PREFIX
+     * @param APEX_SERVER_NAME_IP APEX szerver name or IP address.
+     * @param APEX_SERVER_PORT APEX szerver port.
+     * @param WITHOUT_PARAMETERS Path without parameters.
+     * @param PARAMETER_PREFIX Parameter name (page item) prefix.
      * @param field1 Data for Field 1.
      * @param field2 Data for Field 2.
      * @param field3 Data for Field 3.
@@ -95,7 +95,7 @@ namespace APEX_esp8266 {
 										APEX_SERVER_PORT : string = APEX_LOCAL_API_SERVER_PORT,
 										WITHOUT_PARAMETERS : string = APEX_LOCAL_API_TEST_PATH,
 										PARAMETER_PREFIX : string = APEX_LOCAL_API_PATH_WITHOUT_PARAMETERS,
-                                        field1: number,
+                                        field1: number = 77.1,
                                         field2: number = null,
                                         field3: number = null,
                                         field4: number = null,
